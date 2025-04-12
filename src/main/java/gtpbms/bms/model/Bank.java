@@ -48,7 +48,7 @@ public class Bank {
   /**
    * Gets a list of all accounts in the bank.
    *
-   * @return a new List containing all accounts (never null)
+   * @return a new List containing all accounts
    */
   public List<BankAccount> getAllAccounts() {
     return new ArrayList<>(accounts.values());

@@ -1,6 +1,7 @@
 package gtpbms.bms.model;
 
 import gtpbms.bms.exception.InvalidDepositAmountException;
+import gtpbms.bms.service.TransactionManager;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -86,6 +87,7 @@ public abstract class BankAccount implements Account {
   @Override
   public void addTransaction(Transaction transaction) {
     transactionHistory.addFirst(transaction);
+    //TransactionManager.saveTransactions(this.accountNumber, this.transactionHistory);
   }
 
   /**
@@ -95,7 +97,7 @@ public abstract class BankAccount implements Account {
    */
   @Override
   public List<Transaction> getTransactionHistory() {
-    return new ArrayList<>(transactionHistory);
+    return TransactionManager.loadTransactions(this.accountNumber);
   }
 
   /**
