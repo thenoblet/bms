@@ -36,38 +36,51 @@ A JavaFX-based banking application that simulates different account types (Savin
 
 ```mermaid
 classDiagram
-    class IBankAccount {
+    class Account {
         <<interface>>
         +deposit()
         +withdraw()
         +getBalance()
+        +getAccountNumber()
+        +addTransaction()
+        +getTransaction()
+        +getAccountType()
     }
     
     class BankAccount {
         <<abstract>>
+        #accountHolder: String
+        #accountNumber: String
         #balance: double
         #transactions: LinkedList<Transaction>
-        +BankAccount()
+        +BankAccount() => Constructor
+        +deposit()
+        +getBalance()
+        +getAccountNumber()
         +addTransaction()
         +getTransactionHistory()
+        +getAccountHolder()
     }
     
     class SavingsAccount {
         -MIN_BALANCE: double
+        -INTEREST_RATE: double
         +withdraw() 
     }
     
     class CurrentAccount {
+        -INITIAL_BALANCE: double
         -OVERDRAFT_LIMIT: double
         +withdraw()
     }
     
     class FixedDepositAccount {
+        -INTEREST_RATE: double
         -maturityDate: LocalDate
         +withdraw()
     }
     
-    IBankAccount <|-- BankAccount
+    Account <|-- BankAccount
     BankAccount <|-- SavingsAccount
     BankAccount <|-- CurrentAccount
     BankAccount <|-- FixedDepositAccount
