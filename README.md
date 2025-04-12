@@ -89,7 +89,7 @@ classDiagram
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Java JDK 17+
+- Java JDK 21
 - JavaFX SDK
 - Maven
 
