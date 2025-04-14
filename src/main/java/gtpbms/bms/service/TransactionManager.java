@@ -13,7 +13,6 @@ public class TransactionManager {
     private static final String TXN_DIR = "transactions/";
     private static final Gson gson = new Gson();
 
-    // Save transactions to a JSON file named after the account number
     public static void saveTransactions(String accountNumber, List<Transaction> transactions) {
         File transactionsDir = new File(TXN_DIR);
         if (!transactionsDir.exists()) {
@@ -32,7 +31,6 @@ public class TransactionManager {
         }
     }
 
-    // Load transactions from JSON file
     public static List<Transaction> loadTransactions(String accountNumber) {
         String filePath = TXN_DIR + accountNumber + ".json";
         File file = new File(filePath);

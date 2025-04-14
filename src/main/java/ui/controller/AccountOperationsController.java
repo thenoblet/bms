@@ -23,7 +23,7 @@ public class AccountOperationsController {
     @FXML private Label accountNumberLabel;
     @FXML private Label balanceLabel;
     @FXML private Label accountTypeLabel;
-    @FXML private Label specialInfoLabel; // For maturity date or minimum balance info
+    @FXML private Label specialInfoLabel;
 
     // Transaction Table Components
     @FXML private TableView<Transaction> transactionTable;

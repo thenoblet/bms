@@ -21,15 +21,7 @@ import java.time.LocalDate;
  * @see InterestBearing
  */
 public class FixedDepositAccount extends BankAccount implements InterestBearing {
-
-  /**
-   * The annual interest rate for fixed deposit accounts (12%)
-   */
   private static final double INTEREST_RATE = 0.12;
-
-  /**
-   * The date when the fixed deposit matures and withdrawals are permitted
-   */
   private final LocalDate maturityDate;
 
   /**
